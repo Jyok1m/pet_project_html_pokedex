@@ -1,3 +1,19 @@
+// Purpose: fetch pokemon data
+const getPokemonDataById = (id = 1) => {
+	const baseUrl = "https://pokeapi.co/api/v2/pokemon/";
+	const parsedUrl = `${baseUrl}${id}`;
+
+	fetch(parsedUrl)
+		.then((response) => response.json())
+		.then((data) => {
+			const { id, name, types } = data;
+			const primaryType = types[0]?.type.name ?? "normal";
+			const cardNode = generatePokemonCard({ id, name, primaryType });
+			insertPokemonCard(cardNode);
+		})
+		.catch((error) => console.error(error));
+};
+
 // Purpose: generate pokemon card structure
 const generatePokemonCard = ({ id, name, primaryType }) => {
 	// Format data

@@ -17,3 +17,8 @@ const generatePokemonCard = ({ id, name, primaryType }) => {
     </div>
   `;
 };
+
+// Purpose: add pokemon card to html
+const insertPokemonCard = (cardNode = "") => {
+	document.querySelector("#pokemonContainer").innerHTML += cardNode;
+};

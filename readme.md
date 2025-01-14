@@ -27,7 +27,7 @@ Ce projet est une application web simple qui affiche des cartes de Pokémon en u
 
    ```zsh / bash
    1.	git clone https://github.com/Jyok1m/pet_project_html_pokedex.git
-   2.	Ouvrez le fichier index.html dans votre navigateur :
+   2.	Ouvrez le fichier index.html dans votre navigateur
    ```
 
 2. open index.html

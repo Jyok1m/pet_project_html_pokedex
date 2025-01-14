@@ -49,3 +49,6 @@ const generateCardsByBatch = async () => {
 		await getPokemonDataById(i);
 	}
 };
+
+// Purpose: add event listener to next button
+document.querySelector("#next").addEventListener("click", generateCardsByBatch);

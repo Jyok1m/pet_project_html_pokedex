@@ -53,5 +53,10 @@ const generateCardsByBatch = async () => {
 	}
 };
 
-// Purpose: add event listener to next button
-document.querySelector("#next").addEventListener("click", generateCardsByBatch);
+document.onload = (() => {
+	// Purpose: generate first batch of pokemon cards on page load
+	generateCardsByBatch();
+
+	// Purpose: add event listener to next button
+	document.querySelector("#next").addEventListener("click", generateCardsByBatch);
+})();

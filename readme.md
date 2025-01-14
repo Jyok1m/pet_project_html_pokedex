@@ -26,7 +26,7 @@ Ce projet est une application web simple qui affiche des cartes de Pokémon en u
 1. Clonez ce dépôt :
 
    ```zsh / bash
-   git clone https://github.com/votre-utilisateur/html-pokedex.git
+   git clone https://github.com/Jyok1m/pet_project_html_pokedex.git
 
    2.	Ouvrez le fichier index.html dans votre navigateur :
    ```
@@ -39,10 +39,6 @@ Ce projet est une application web simple qui affiche des cartes de Pokémon en u
 ## Dépendances
 
 • PokéAPI : API utilisée pour récupérer les données des Pokémon.
-
-## Aperçu
-
-Un aperçu de l’application peut être ajouté ici avec une capture d’écran ou un GIF.
 
 ## Auteur
 

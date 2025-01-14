@@ -3,15 +3,18 @@ const getPokemonDataById = async (id = 1) => {
 	const baseUrl = "https://pokeapi.co/api/v2/pokemon/";
 	const parsedUrl = `${baseUrl}${id}`;
 
-	fetch(parsedUrl)
-		.then((response) => response.json())
-		.then((data) => {
-			const { id, name, types } = data;
-			const primaryType = types[0]?.type.name ?? "normal";
-			const cardNode = generatePokemonCard({ id, name, primaryType });
-			insertPokemonCard(cardNode);
-		})
-		.catch((error) => console.error(error));
+	try {
+		const response = await fetch(parsedUrl);
+		const data = await response.json();
+
+		const { id, name, types } = data;
+		const primaryType = types[0]?.type.name ?? "normal";
+
+		const cardNode = generatePokemonCard({ id, name, primaryType });
+		insertPokemonCard(cardNode);
+	} catch (error) {
+		console.error(error);
+	}
 };
 
 // Purpose: generate pokemon card structure

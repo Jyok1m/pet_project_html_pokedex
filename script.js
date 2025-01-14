@@ -1,5 +1,5 @@
 // Purpose: fetch pokemon data
-const getPokemonDataById = (id = 1) => {
+const getPokemonDataById = async (id = 1) => {
 	const baseUrl = "https://pokeapi.co/api/v2/pokemon/";
 	const parsedUrl = `${baseUrl}${id}`;
 
@@ -37,4 +37,15 @@ const generatePokemonCard = ({ id, name, primaryType }) => {
 // Purpose: add pokemon card to html
 const insertPokemonCard = (cardNode = "") => {
 	document.querySelector("#pokemonContainer").innerHTML += cardNode;
+};
+
+// Purpose: generate pokemon cards
+const generateCardsByBatch = async () => {
+	const step = 15;
+	const from = document.querySelectorAll(".pokemon").length + 1;
+	const to = from + step;
+
+	for (let i = from; i < to; i++) {
+		await getPokemonDataById(i);
+	}
 };

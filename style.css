@@ -66,6 +66,11 @@ h1 {
 	height: 40px;
 	text-align: center;
 	margin: 20px;
+  cursor: pointer;
+}
+
+#next:hover {
+  background-color: rgba(255, 255, 255, 0.8);
 }
 
 .fire {
